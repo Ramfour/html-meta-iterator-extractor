@@ -83,6 +83,7 @@ class MetaTagExtractor
         $metaNodes = $this->xpath->query('//meta[@name]');
         
         // Итерация по всем meta-тегам с атрибутом name
+        /** @var DOMElement $metaNode */
         foreach ($metaNodes as $metaNode) {
             $name = strtolower($metaNode->getAttribute('name'));
             $content = $metaNode->getAttribute('content');
@@ -133,6 +134,7 @@ class MetaTagExtractor
         
         // Итерация через ArrayIterator
         while ($iterator->valid()) {
+            /** @var DOMElement $metaNode */
             $metaNode = $iterator->current();
             $name = strtolower($metaNode->getAttribute('name'));
             $content = $metaNode->getAttribute('content');
